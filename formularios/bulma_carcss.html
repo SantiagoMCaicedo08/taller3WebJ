@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro con Bulma</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script>
+        function validateInput(input) {
+            var value = input.value;
+            var maxLength = input.maxLength;
+
+            if ((value != "" && !isNumeric(value)) || value.length > maxLength) {
+                alert("Por favor, ingresa un número de hasta " + maxLength + " dígitos.");
+                input.value = input.value.slice(0, maxLength);
+            }
+        }
+        
+        function isNumeric(value) {
+            return /^\d+$/.test(value);
+        }
+    </script>
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+        <h2 class="title has-text-centered">Formulario de Registro</h2>
+        <form>
+            <div class="field">
+                <label class="label" for="id_coche">ID Coche</label>
+                <div class="control">
+                    <input class="input" type="text" id="id_coche" name="id_coche" maxlength="11" oninput="validateInput(this)">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="id_movidoa">ID Movidoa</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="id_movidoa" name="id_movidoa">
+                            <option value="1">Movidoa 1</option>
+                            <option value="2">Movidoa 2</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="id_tipocoche">ID Tipo de Coche</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="id_tipocoche" name="id_tipocoche">
+                            <option value="1">Tipo de Coche 1</option>
+                            <option value="2">Tipo de Coche 2</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="id_estado">ID Estado</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="id_estado" name="id_estado">
+                            <option value="1">Estado 1</option>
+                            <option value="2">Estado 2</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="id_marca">ID Marca</label>
+                <div class="control">
+                    <div class="select is-fullwidth">
+                        <select id="id_marca" name="id_marca">
+                            <option value="1">Marca 1</option>
+                            <option value="2">Marca 2</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="id_usr">ID Usuario</label>
+                <div class="control">
+                    <input class="input" type="text" id="id_usr" name="id_usr" maxlength="11" oninput="validateInput(this)">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="modelo">Modelo</label>
+                <div class="control">
+                    <input class="input" type="text" id="modelo" name="modelo" maxlength="60">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="anio">Año</label>
+                <div class="control">
+                    <input class="input" type="text" id="anio" name="anio" maxlength="4">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="detalle">Detalle</label>
+                <div class="control">
+                    <input class="input" type="text" id="detalle" name="detalle">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="caja">Caja</label>
+                <div class="control">
+                    <input class="input" type="text" id="caja" name="caja" maxlength="11" oninput="validateInput(this)">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="motor">Motor</label>
+                <div class="control">
+                    <input class="input" type="text" id="motor" name="motor" maxlength="4" oninput="validateInput(this)">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="fechapub">Fecha de Publicación</label>
+                <div class="control">
+                    <input class="input" type="text" id="fechapub" name="fechapub" maxlength="10">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="precio">Precio</label>
+                <div class="control">
+                    <input class="input" type="text" id="precio" name="precio" maxlength="8" oninput="validateInput(this)">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="cc_pic01">Info carro 1</label>
+                <div class="control">
+                    <input class="input" type="text" id="cc_pic01" name="cc_pic01" maxlength="85">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="cc_pic02">Info carro 2</label>
+                <div class="control">
+                    <input class="input" type="text" id="cc_pic02" name="cc_pic02" maxlength="85">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="cc_pic03">Info carro 3</label>
+                <div class="control">
+                    <input class="input" type="text" id="cc_pic03" name="cc_pic03" maxlength="85">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label" for="cc_destac">Destacado</label>
+                <div class="control">
+                    <input class="input" type="text" id="cc_destac" name="cc_destac" maxlength="2">
+                </div>
+            </div>
+
+            <div class="field">
+                <button class="button is-primary" type="submit">Registrar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
