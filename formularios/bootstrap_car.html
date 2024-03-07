@@ -12,7 +12,7 @@ function validateInput(input) {
 
     if ((value != "" && !isNumeric(value)) || value.length > maxLength) {
         alert("Por favor, ingresa un número de hasta " + maxLength + " dígitos.");
-        input.value = input.value.slice(0, maxLength); // Asegura que no se exceda el maxLength
+        input.value = input.value.slice(0, maxLength); 
     }
 }
 
@@ -36,7 +36,7 @@ function isNumeric(value) {
             <select class="form-control" id="id_movidoa" name="id_movidoa">
                 <option value="1">Movidoa 1</option>
                 <option value="2">Movidoa 2</option>
-                <!-- Agrega aquí las opciones que necesites -->
+
             </select>
         </div>
 
@@ -45,7 +45,7 @@ function isNumeric(value) {
             <select class="form-control" id="id_tipocoche" name="id_tipocoche">
                 <option value="1">Tipo de Coche 1</option>
                 <option value="2">Tipo de Coche 2</option>
-                <!-- Agrega aquí las opciones que necesites -->
+
             </select>
         </div>
 
@@ -54,7 +54,7 @@ function isNumeric(value) {
             <select class="form-control" id="id_estado" name="id_estado">
                 <option value="1">Estado 1</option>
                 <option value="2">Estado 2</option>
-                <!-- Agrega aquí las opciones que necesites -->
+
             </select>
         </div>
 
@@ -63,7 +63,7 @@ function isNumeric(value) {
             <select class="form-control" id="id_marca" name="id_marca">
                 <option value="1">Marca 1</option>
                 <option value="2">Marca 2</option>
-                <!-- Agrega aquí las opciones que necesites -->
+
             </select>
         </div>
 
