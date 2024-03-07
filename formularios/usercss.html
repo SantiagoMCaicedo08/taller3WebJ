@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: rgb(106, 5, 177);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+  <script>
+    function validateInput(input) {
+      var value = input.value;
+      var maxLength = input.maxLength;
+    
+      // Comprueba si la entrada es numérica y si no supera la longitud máxima
+      if ((value != "" && !isNumeric(value)) || value.length > maxLength) {
+        alert("Por favor, ingresa un número de hasta " + maxLength + " dígitos.");
+        input.value = input.value.slice(0, value.length-1); //elimina de la cadena el caracter que no es numérico.
+      }
+    }
+    
+    function isNumeric(value) {
+      return /^\d+$/.test(value);
+    }
+    </script>
+
+<h2>Formulario de Registro</h2>
+
+<form>
+  <label for="id_usr">ID Usuario</label>
+  <input type="text" id="id_usr" name="id_usr" maxlength="11" oninput="validateInput(this)">
+
+  <label for="id_pais">ID País</label>
+  <select id="id_pais" name="id_pais">
+    <option value="1">Colombia</option>
+    <option value="2">Argentina</option>
+    <option value="3">Venezuela</option>
+    <option value="4">Perú</option>
+  </select>
+
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre" maxlength="25">
+  
+  <label for="apellido">Apellido</label>
+  <input type="text" id="apellido" name="apellido" maxlength="25">
+  
+  <label for="direccion">Direccion</label>
+  <input type="text" id="direccion" name="direccion" maxlength="45">
+  
+  <label for="ccusuario">Cedula Usuario</label>
+  <input type="text" id="ccusuario" name="ccusuario" maxlength="20">
+
+  <label for="ccpaswd">Contraseña</label>
+  <input type="password" id="ccpaswd" name="ccpaswd">
+
+  <label for="ccusuario">Email</label>
+  <input type="email" id="ccusuario" name="ccusuario" maxlength="120">
+
+  <label for="telefono">Teléfono</label>
+  <input type="text" id="telefono" name="telefono" maxlength="20">
+
+  <button type="submit">Registrar</button>
+</form>
+
+</body>
+</html>

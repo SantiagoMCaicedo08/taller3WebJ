@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+input, select {
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  background-color: #90ee90;
+  color: white;
+  font-size: 18px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+  <script>
+    function validateInput(input) {
+      var value = input.value;
+      var maxLength = input.maxLength;
+    
+      // Comprueba si la entrada es numérica y si no supera la longitud máxima
+      if ((value != "" && !isNumeric(value)) || value.length > maxLength) {
+        alert("Por favor, ingresa un número de hasta " + maxLength + " dígitos.");
+        input.value = input.value.slice(0, value.length-1); //elimina de la cadena el caracter que no es numérico.
+      }
+    }
+    
+    function isNumeric(value) {
+      return /^\d+$/.test(value);
+    }
+    </script>
+
+<h2>Formulario de Registro</h2>
+
+<form>
+  <label for="id_coche">ID Coche</label>
+  <input type="text" id="id_coche" name="id_coche" maxlength="11" oninput="validateInput(this)">
+
+  <label for="id_movidoa">ID Movidoa</label>
+  <select id="id_movidoa" name="id_movidoa">
+    <option value="1">Movidoa 1</option>
+    <option value="2">Movidoa 2</option>
+    <!-- Agrega aquí las opciones que necesites -->
+  </select>
+
+  <label for="id_tipocoche">ID Tipo de Coche</label>
+  <select id="id_tipocoche" name="id_tipocoche">
+    <option value="1">Tipo de Coche 1</option>
+    <option value="2">Tipo de Coche 2</option>
+    <!-- Agrega aquí las opciones que necesites -->
+  </select>
+
+  <label for="id_estado">ID Estado</label>
+  <select id="id_estado" name="id_estado">
+    <option value="1">Estado 1</option>
+    <option value="2">Estado 2</option>
+    <!-- Agrega aquí las opciones que necesites -->
+  </select>
+
+  <label for="id_marca">ID Marca</label>
+  <select id="id_marca" name="id_marca">
+    <option value="1">Marca 1</option>
+    <option value="2">Marca 2</option>
+    <!-- Agrega aquí las opciones que necesites -->
+  </select>
+
+  <label for="id_usr">ID Usuario</label>
+  <input type="text" id="id_usr" name="id_usr" maxlength="11" oninput="validateInput(this)">
+
+  <label for="modelo">Modelo</label>
+  <input type="text" id="modelo" name="modelo" maxlength="60">
+
+  <label for="anio">Año</label>
+  <input type="text" id="anio" name="anio" maxlength="4">
+
+  <label for="detalle">Detalle</label>
+  <input type="text" id="detalle" name="detalle">
+
+  <label for="caja">Caja</label>
+  <input type="text" id="caja" name="caja" maxlength="11" oninput="validateInput(this)">
+
+  <label for="motor">Motor</label>
+  <input type="text" id="motor" name="motor" maxlength="4" oninput="validateInput(this)">
+
+  <label for="fechapub">Fecha de Publicación</label>
+  <input type="text" id="fechapub" name="fechapub" maxlength="10">
+
+  <label for="precio">Precio</label>
+  <input type="text" id="precio" name="precio" maxlength="8" oninput="validateInput(this)">
+
+  <label for="cc_pic01">Info carro 1</label>
+  <input type="text" id="cc_pic01" name="cc_pic01" maxlength="85">
+
+  <label for="cc_pic02">Info carro 2</label>
+  <input type="text" id="cc_pic02" name="cc_pic02" maxlength="85">
+
+  <label for="cc_pic03">Info carro 3</label>
+  <input type="text" id="cc_pic03" name="cc_pic03" maxlength="85">
+
+  <label for="cc_destac">Destacado</label>
+  <input type="text" id="cc_destac" name="cc_destac" maxlength="2">
+
+  <button type="submit">Registrar</button>
+</form>
+
+</body>
+</html>
