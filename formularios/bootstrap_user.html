@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario con Bootstrap</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script>
+function validateInput(input) {
+    var value = input.value;
+    var maxLength = input.maxLength;
+
+    if ((value != "" && !isNumeric(value)) || value.length > maxLength) {
+        alert("Por favor, ingresa un número de hasta " + maxLength + " dígitos.");
+        input.value = input.value.slice(0, maxLength); // Asegura que no se exceda el maxLength
+    }
+}
+
+function isNumeric(value) {
+    return /^\d+$/.test(value);
+}
+</script>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Formulario de Registro</h2>
+    <form>
+        <div class="form-group">
+            <label for="id_usr" class="d-block mb-2">ID Usuario</label>
+            <input type="text" class="form-control" id="id_usr" name="id_usr" maxlength="11" oninput="validateInput(this)">
+        </div>
+
+        <div class="form-group">
+            <label for="id_pais" class="d-block mb-2">ID País</label>
+            <select class="form-control" id="id_pais" name="id_pais">
+                <option value="1">Colombia</option>
+                <option value="2">Argentina</option>
+                <option value="3">Venezuela</option>
+                <option value="4">Perú</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre" class="d-block mb-2">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="25">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido" class="d-block mb-2">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" maxlength="25">
+        </div>
+
+        <div class="form-group">
+            <label for="direccion" class="d-block mb-2">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" maxlength="45">
+        </div>
+
+        <div class="form-group">
+            <label for="ccusuario" class="d-block mb-2">Cédula Usuario</label>
+            <input type="text" class="form-control" id="ccusuario" name="ccusuario" maxlength="20">
+        </div>
+
+        <div class="form-group">
+            <label for="ccpaswd" class="d-block mb-2">Contraseña</label>
+            <input type="password" class="form-control" id="ccpaswd" name="ccpaswd">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="d-block mb-2">Email</label>
+            <input type="email" class="form-control" id="email" name="email" maxlength="120">
+        </div>
+
+        <div class="form-group">
+            <label for="telefono" class="d-block mb-2">Teléfono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" maxlength="20">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
